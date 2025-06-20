@@ -18,8 +18,8 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 ('ownerEmma',     'emma@example.com',    'hashed202', 'owner');
 
 INSERT INTO Dogs (name, size, owner_id) VALUES
-('Max', 'medium', (SELECT user_id FROM Users WHERE username = 'ownerJane')),
-('Bella', 'small', (SELECT user_id FROM Users WHERE username = 'ownerBob')),
+('Buddy', 'medium', (SELECT user_id FROM Users WHERE username = 'ownerJane')),
+('Lucy', 'small', (SELECT user_id FROM Users WHERE username = 'ownerJane')),
 ('Rocky', 'large', (SELECT user_id FROM Users WHERE username = 'ownerEmma')),
 ('Charlie', 'medium', (SELECT user_id FROM Users WHERE username = 'ownerJane')),
 ('Luna', 'small', (SELECT user_id FROM Users WHERE username = 'ownerBob'));
