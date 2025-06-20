@@ -12,7 +12,7 @@ router.get('/api/dogs', async function(req, res, next) {
   try {
 
   } catch (err) {
-     
+      next(err);
   }
 });
 
