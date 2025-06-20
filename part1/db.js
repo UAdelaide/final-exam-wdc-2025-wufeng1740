@@ -42,7 +42,7 @@ const rawPool = mysql.createPool({
 async function rawQuery(sql, params) {
   let connection;
   try {
-    connection = await pool.getConnection();
+    connection = await rawPool.getConnection();
     await connection.beginTransaction();
     const [rows, fields] = await connection.execute(sql, params);
     await connection.commit();
