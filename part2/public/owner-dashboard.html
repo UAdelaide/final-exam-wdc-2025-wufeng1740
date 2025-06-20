@@ -167,7 +167,9 @@
             }
             this.dogs = result;
           } catch (err) {
-            error.value = 'Failed to load dogs';
+            // error.value = 'Failed to load dogs';
+            error.value = err.message;
+            message.value = '';
           }
         }
 
