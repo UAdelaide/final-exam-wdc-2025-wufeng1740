@@ -76,7 +76,10 @@ router.post('/logout', (req, res) => {
 });
 
 // GET dogs for user
-router.get('/dogs
+router.get('/dogs', async (req, res) => {
+  if (!req.session.user) {
+    return res.status(401).json({ error: 'Not logged in' });
+  }
 
 
 module.exports = router;
