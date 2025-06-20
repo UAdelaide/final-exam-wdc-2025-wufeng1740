@@ -39,8 +39,10 @@ async function runSQLFile(filename) {
 }
 
 // database initialization
-runSQLFile('dogwalks.sql');
-runSQLFile('test_data.sql');
+async function initDatabase() {
+  await runSQLFile('dogwalks.sql');
+  await runSQLFile('test_data.sql');
+}
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
