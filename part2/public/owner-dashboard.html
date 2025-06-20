@@ -166,7 +166,7 @@
             if (!response.ok) {
               throw new Error(result.error || 'Failed to fetch dogs');
             }
-            dogs = result;
+            dogs.value = result;
             console.log('Dogs loaded:', dogs);
           } catch (err) {
             // error.value = 'Failed to load dogs';
