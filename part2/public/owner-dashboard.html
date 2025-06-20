@@ -169,8 +169,8 @@
             dogs = result;
             console.log('Dogs loaded:', dogs);
           } catch (err) {
-            // error.value = 'Failed to load dogs';
-            error.value = err.message;
+            error.value = 'Failed to load dogs';
+            error.value = 'Failed to load dogs' + err.message;
             message.value = '';
           }
         }
