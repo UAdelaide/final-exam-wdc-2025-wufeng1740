@@ -152,6 +152,12 @@
 
         // get all dogs for the owner
         async function loadDogs() {
+          try {
+
+          } catch (err) {
+            error.value = 'Failed to load dogs';
+          }
+        }
 
         onMounted(() => {
           loadWalks();
