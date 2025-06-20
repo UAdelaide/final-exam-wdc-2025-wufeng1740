@@ -21,9 +21,16 @@ router.get('/api/dogs', async function(req, res, next) {
   }
 });
 
-
+// Return all open walk requests, including the dog name, requested time, location, and owner's username.
 router.get('/api/walkrequests/open', async function(req, res, next) {
-
+    try {
+    const row = await db.query(`
+      
+    `);
+    res.json(row);
+  } catch (err) {
+      next(err);
+  }
 });
 
 router.get('/api/walkers/summary', async function(req, res, next) {
