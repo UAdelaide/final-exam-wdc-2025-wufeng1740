@@ -18,9 +18,8 @@
     <div v-for="request in walkrequests">
         <h2>{{request.request_id}} - {{ request.dog_name }}</h2>
         <img :src="getDogImg()" alt="">
-        <p><strong>Date:</strong> {{ new Date(request.requested_time).toLocaleDateString() }}</p>
-        <p><strong>Time:</strong> {{ new Date(request.requested_time).toLocaleTimeString() }}</p>
-        <p><strong>Duration:</strong> {{ request.duration_minutes }} minutes</p>
+        <p>Time:{{ request.requested_time}}</p>
+        <p>Duration: {{ request.duration_minutes }} minutes</p>
         <p><strong>Location:</strong> {{ request.location }}</p>
         <p><strong>Owner:</strong> {{ request.owner_username }}</p>
     </div>
