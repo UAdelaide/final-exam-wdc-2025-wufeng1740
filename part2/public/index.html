@@ -60,6 +60,7 @@
             if (!response.ok) {
               throw new Error(result.error || 'Login failed');
             }
+            
           } catch (error) {
             console.error('Login error:', error);
             return;
