@@ -82,6 +82,18 @@
             alert('Login failed: ' + error.message);
             return;
           }
+        },
+        async fetchAllDogs() {
+          try {
+            const response = await fetch('/api/dogs');
+            if (!response.ok) {
+              throw new Error('Failed to fetch dogs');
+            }
+            this.alldogs = await response.json();
+            console.log('All registered dogs:', this.alldogs);
+          } catch (error) {
+            console.error('Error fetching dogs:', error);
+          }
         }
       },
       mounted() {
