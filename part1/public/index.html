@@ -25,11 +25,11 @@
         <p>Owner: {{ request.owner_username }}</p>
     </div>
 
-    <form action="">
+    <form>
       <h2>Apply to walk a dog</h2>
       <input type="text" v-model="request.dog_name" placeholder="Dog Name">
       <input type="text" v-model="request.request_id" placeholder="Request ID">
-      <button type="submit" @click="alert('thanks for your Apply')" >Apply</button>
+      <button type="submit" @click="alert('thanks for your applying')" >Apply</button>
     </form>
   </div>
 
