@@ -59,6 +59,7 @@
 
         // get current user's user_id
         async function getCurrentUser() {
+          console.log('Fetching current user ID...');
           try {
             const res = await fetch(`/api/users/me`);
             const result = await res.json();
@@ -67,6 +68,7 @@
             message.value = result.message;
             error.value = '';
             user = result.user_id;
+            console.log('Current user ID:', user);
           } catch (err) {
             error.value = err.message;
             message.value = '';
