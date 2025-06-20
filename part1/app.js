@@ -32,7 +32,7 @@ async function runSQLFile(filename) {
       console.log(`Running SQL: ${statement}`);
       await db.query(statement);
     }
-    console.log('✅ SQL file executed successfully.');
+    console.log(`✅ SQL file ${filename} executed successfully.`);
   } catch (err) {
     console.error('❌ Error executing SQL file:', err.message);
   }
