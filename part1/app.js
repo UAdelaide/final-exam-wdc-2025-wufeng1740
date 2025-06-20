@@ -4,7 +4,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const db = require(".db.js"); // Import the database module
 
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
