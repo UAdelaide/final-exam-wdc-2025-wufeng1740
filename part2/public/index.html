@@ -45,7 +45,7 @@
           const username = this.username;
           const password = this.password;
 
-          if (!username || !password) {
+          if (!this.username || !this.password) {
             alert('Please enter both username and password');
             return;
           }
@@ -55,7 +55,7 @@
               headers: {
                 'Content-Type': 'application/json'
               },
-              body: JSON.stringify({ username: username, password: password })
+              body: JSON.stringify({ username: this.username, password: this.password })
             });
             const result = await response.json();
             if (!response.ok) {
