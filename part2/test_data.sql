@@ -11,17 +11,17 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 -- Insert Test Data -------------------------------------------------------
 INSERT INTO Users (username, email, password_hash, role) VALUES
-('alice123',    'alice@example.com',   'hashed123', 'owner'),
+('',    'alice@example.com',   'hashed123', 'owner'),
 ('bobwalker',   'bob@example.com',     'hashed456', 'walker'),
 ('carol123',    'carol@example.com',   'hashed789', 'owner'),
 ('davidwalker', 'david@example.com',   'hashed101', 'walker'),
 ('emma123',     'emma@example.com',    'hashed202', 'owner');
 
 INSERT INTO Dogs (name, size, owner_id) VALUES
-('Max', 'medium', (SELECT user_id FROM Users WHERE username = 'alice123')),
+('Max', 'medium', (SELECT user_id FROM Users WHERE username = '')),
 ('Bella', 'small', (SELECT user_id FROM Users WHERE username = 'carol123')),
 ('Rocky', 'large', (SELECT user_id FROM Users WHERE username = 'emma123')),
-('Charlie', 'medium', (SELECT user_id FROM Users WHERE username = 'alice123')),
+('Charlie', 'medium', (SELECT user_id FROM Users WHERE username = '')),
 ('Luna', 'small', (SELECT user_id FROM Users WHERE username = 'carol123'));
 
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
@@ -35,4 +35,4 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 INSERT INTO WalkRatings (request_id, rating, comments, walker_id, owner_id) VALUES
 ((SELECT request_id FROM WalkRequests WHERE status = 'completed' LIMIT 1), 5, 'Great service, very professional!',
  (SELECT user_id FROM Users WHERE username = 'davidwalker'),
- (SELECT user_id FROM Users WHERE username = 'alice123'));
+ (SELECT user_id FROM Users WHERE username = ''));
