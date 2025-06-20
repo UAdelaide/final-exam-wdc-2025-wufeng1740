@@ -76,7 +76,7 @@ router.post('/logout', (req, res) => {
 });
 
 // GET dogs for user
-
+router.get('/dogs
 
 
 module.exports = router;
