@@ -42,9 +42,6 @@
       },
       methods: {
         async logIn() {
-          const username = this.username;
-          const password = this.password;
-
           if (!this.username || !this.password) {
             alert('Please enter both username and password');
             return;
