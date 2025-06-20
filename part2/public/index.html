@@ -110,7 +110,7 @@
               const img = await this.fetchRandomDogImg();
               return { ...dog, dogImg: img };
             }));
-            this.alldogs = result;
+            this.alldogs = requestsWithImages;
             console.log('Fetched dogs:', this.alldogs);
             console.log('All registered dogs:', this.alldogs);
           } catch (error) {
