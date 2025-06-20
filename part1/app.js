@@ -38,7 +38,8 @@ async function runSQLFile(filename) {
   }
 }
 
-run
+runSQLFile('db.sql');
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
