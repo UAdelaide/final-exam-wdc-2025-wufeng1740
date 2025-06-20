@@ -153,6 +153,7 @@
 
         // get all dogs for the owner
         async function loadDogs() {
+          console.log('Loading dogs for the owner...');
           try {
             const response = await fetch('/api/users/dogs', {
               method: 'GET',
