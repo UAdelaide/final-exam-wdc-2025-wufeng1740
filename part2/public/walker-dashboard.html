@@ -67,7 +67,7 @@
             if (!res.ok) throw new Error(result.error || 'get current user_id failed');
             message.value = result.message;
             error.value = '';
-            user = result.user_id;
+            user.value = result.user_id;
             console.log('Current user ID:', user);
           } catch (err) {
             error.value = err.message;
