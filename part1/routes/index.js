@@ -21,6 +21,7 @@ router.get('/api/dogs', async function(req, res, next) {
   }
 });
 
+
 router.get('/api/walkrequests/open', async function(req, res, next) {
 
 });
