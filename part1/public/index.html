@@ -17,6 +17,11 @@
     const app = Vue.createApp({
       data() {
         return {
+          notification: {
+            visible: false,
+            message: '',
+            type: '' // 'success' or 'error'
+          },
           dogImg: '',
         }
       },
