@@ -17,7 +17,12 @@
     <!-- <p>This is a simple Vue.js application.</p> -->
     <img :src="dogImg" alt="">
     <div v-for="request in walkrequests">
-      
+        <h2>{{ request.dog_name }}</h2>
+        <p><strong>Date:</strong> {{ new Date(request.requested_time).toLocaleDateString() }}</p>
+        <p><strong>Time:</strong> {{ new Date(request.requested_time).toLocaleTimeString() }}</p>
+        <p><strong>Duration:</strong> {{ request.duration_minutes }} minutes</p>
+        <p><strong>Location:</strong> {{ request.location }}</p>
+        <p><strong>Owner:</strong> {{ request.owner_username }}</p>
     </div>
   </div>
 
