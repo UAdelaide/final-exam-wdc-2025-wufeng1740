@@ -162,7 +162,7 @@
             });
             const result = await response.json();
             if (!response.ok) {
-              throw new Error('Failed to fetch dogs');
+              throw new Error(result.error || 'Failed to fetch dogs');
             }
           } catch (err) {
             error.value = 'Failed to load dogs';
