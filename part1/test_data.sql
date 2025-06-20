@@ -11,6 +11,9 @@
 -- GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
 -- FLUSH PRIVILEGES;
 
+-- Use Database -------------------------------------------------------
+USE DogWalkService;
+
 -- Clean Data ------------------------------------------------------------
 SET FOREIGN_KEY_CHECKS = 0;
 /* clean data and reset id number*/
@@ -18,9 +21,6 @@ TRUNCATE TABLE WalkRequests;
 TRUNCATE TABLE Dogs;
 TRUNCATE TABLE Users;
 SET FOREIGN_KEY_CHECKS = 1;
-
--- Use Database -------------------------------------------------------
-USE DogWalkService;
 
 -- Insert Test Data -------------------------------------------------------
 INSERT INTO Users (username, email, password_hash, role) VALUES
