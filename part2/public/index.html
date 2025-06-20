@@ -106,9 +106,9 @@
               throw new Error(result.error || 'Failed to fetch dogs');
             }
             // add dog images to each dog
-            const requestsWithImages = await Promise.all(result.map(async (request) => {
+            const requestsWithImages = await Promise.all(result.map(async (dog) => {
               const img = await this.fetchRandomDogImg();
-              return { ...request, dogImg: img };
+              return { ...dog, dogImg: img };
             }));
             this.alldogs = result;
             console.log('Fetched dogs:', this.alldogs);
