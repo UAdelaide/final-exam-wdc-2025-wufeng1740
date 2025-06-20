@@ -31,7 +31,7 @@
 
   <div>
     <h3>All Registered Dogs</h3>
-    
+
   </div>
 
 </div>
@@ -92,6 +92,11 @@
             if (!response.ok) {
               throw new Error(result.error || 'Failed to fetch dogs');
             }
+            // add dog images to each dog
+            const requestsWithImages = await Promise.all(result.map(async (request) => {
+              const img = await this.fetchRandomDogImg();
+              return { ...request, dogImg: img };
+            }));
             this.alldogs = result;
             console.log('Fetched dogs:', this.alldogs);
             console.log('All registered dogs:', this.alldogs);
