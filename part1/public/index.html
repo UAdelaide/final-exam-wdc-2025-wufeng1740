@@ -59,7 +59,7 @@
               throw new Error(result.error || 'Network response was not ok');
             }
             // deal with the result
-            this.dogImg = result.message;
+            this.walkrequests = result;
             console.log(this.dogImg);
             this.showNotification('Data fetched successfully!', 'success');
             return result.message;
