@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 async function runSQLFile(filename) {
-  const filePath = path.join(__dirname, 'dogwalks.sql');
+  const filePath = path.join(__dirname, filename);
   const sql = fs.readFileSync(filePath, 'utf-8');
 
   // Split on semicolon + newline to separate commands (you may need to tweak this)
