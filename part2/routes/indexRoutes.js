@@ -11,7 +11,7 @@ router.get('/api/dogs', async function(req, res, next) {
     `);
     res.status(200).json(row);
   } catch (err) {
-      res.status(500).json({ error: 'Fetch  failed' });
+      res.status(500).json({ error: 'Fetch dog list failed' });
   }
 });
 
