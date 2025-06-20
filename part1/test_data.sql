@@ -46,4 +46,6 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 
 -- Insert Test Data for WalkRatings
 INSERT INTO WalkRatings (request_id, rating, comments, walker_id, owner_id) VALUES
-((SELECT walk_request_id FROM WalkRequests WHERE status = 'completed' LIMIT 1), 5, 'Great service, very professional!', );
+((SELECT walk_request_id FROM WalkRequests WHERE status = 'completed' LIMIT 1), 5, 'Great service, very professional!',
+ (SELECT user_id FROM Users WHERE username = 'davidwalker'),
+ (SELECT user_id FROM Users WHERE username = 'alice123'));
