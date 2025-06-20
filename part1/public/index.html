@@ -9,6 +9,9 @@
 
 <body>
   <div id="app">
+        <div v-if="notification.visible" :class="['notification', notification.type]">
+      {{ notification.message }}
+    </div>
     <h1>Dog Walking Service</h1>
     <!-- <p>This is a simple Vue.js application.</p> -->
     <img :src="dogImg" alt="">
