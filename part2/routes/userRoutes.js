@@ -81,12 +81,14 @@ router.get('/dogs', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   const userId = req.session.user.user_id;
+  console.log('Fetching dogs for user:', userId);
   try {
     const [rows] = await db.query(`
       SELECT d.dog_id, d.name
       FROM Dogs d
       WHERE d.owner_id = ?`, [userId]);
     res.json(rows);
+    console.log('Dogs fetched:', rows);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
