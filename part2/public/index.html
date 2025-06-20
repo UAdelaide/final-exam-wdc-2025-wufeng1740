@@ -37,10 +37,7 @@
           message: 'Welcome to the Dog Walking Service!',
           username: '',
           password: '',
-          user: {
-            id: null,
-            role: null // 'owner' or 'walker'
-          }
+          user: null
         };
       },
       methods: {
@@ -64,7 +61,7 @@
             if (!response.ok) {
               throw new Error(result.error || 'Login failed');
             }
-
+            
           } catch (error) {
             console.error('Login error:', error);
             return;
