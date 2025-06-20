@@ -34,7 +34,7 @@ async function runSQLFile(filename) {
     }
     console.log(`✅ SQL file ${filename} executed successfully.`);
   } catch (err) {
-    console.error(`❌ Error executing SQL file:', err.message);
+    console.error(`❌ Error executing SQL file ${filename}:`, err.message);
   }
 }
 
