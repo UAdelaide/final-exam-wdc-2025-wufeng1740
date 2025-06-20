@@ -39,10 +39,10 @@ const rawPool = mysql.createPool({
   queueLimit: 0
 });
 
-async function rawQuery(poolUsed, sql, params) {
+async function query(sql, params) {
   let connection;
   try {
-    connection = await poolUsed.getConnection();
+    connection = await pool.getConnection();
     await connection.beginTransaction();
     const [rows, fields] = await connection.execute(sql, params);
     await connection.commit();
