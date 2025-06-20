@@ -25,7 +25,11 @@ router.get('/api/dogs', async function(req, res, next) {
 router.get('/api/walkrequests/open', async function(req, res, next) {
     try {
     const row = await db.query(`
-      
+      SELECT d.name as dog_name, wr.requested_time, wr.location, u.username as owner_username
+      FROM WalkRequests wr
+      JOIN Dogs d ON wr.dog_id = d.dog_id
+      JOIN Users u ON d.owner_id = u.user_id
+      WHERE wr.status = 'open'
     `);
     res.json(row);
   } catch (err) {
