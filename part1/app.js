@@ -38,8 +38,9 @@ async function runSQLFile(filename) {
   }
 }
 
+// database initialization
 runSQLFile('db.sql');
-
+runSQLFile('test_data.sql');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
