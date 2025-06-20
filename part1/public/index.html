@@ -35,7 +35,15 @@
           } catch (error) {
             console.error('Error fetching dog image:', error);
           }
-        }
+        },
+        showNotification(msg, type) {
+          this.notification.message = msg;
+          this.notification.type = type;
+          this.notification.visible = true;
+          setTimeout(() => {
+            this.notification.visible = false;
+          }, 5000);
+        },
       },
       mounted() {
         this.greet();
