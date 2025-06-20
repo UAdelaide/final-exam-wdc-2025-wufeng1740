@@ -51,12 +51,12 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
 });
 
 // Return a summary of each walker with their average rating and number of completed walks.
-  {
-    "walker_username": "bobwalker",
-    "total_ratings": 2,
-    "average_rating": 4.5,
-    "completed_walks": 2
-  },
+  // {
+  //   "walker_username": "bobwalker",
+  //   "total_ratings": 2,
+  //   "average_rating": 4.5,
+  //   "completed_walks": 2
+  // },
 router.get('/api/walkers/summary', async function(req, res, next) {
 
 });
