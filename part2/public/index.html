@@ -42,6 +42,7 @@
       },
       methods: {
         async logIn() {
+          console.log('Attempting to log in with:', this.username, this.password);
           if (!this.username || !this.password) {
             alert('Please enter both username and password');
             return;
