@@ -89,9 +89,9 @@
             const response = await fetch('/api/dogs');
             const result = await response.json();
             if (!response.ok) {
-              throw new Error('Failed to fetch dogs');
+              throw new Error(result.error || 'Failed to fetch dogs');
             }
-            this.alldogs = await response.json();
+            this.alldogs = result;
             console.log('All registered dogs:', this.alldogs);
           } catch (error) {
             console.error('Error fetching dogs:', error);
