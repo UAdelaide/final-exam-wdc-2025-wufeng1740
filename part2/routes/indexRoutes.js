@@ -14,3 +14,5 @@ router.get('/api/dogs', async function(req, res, next) {
       next(err);
   }
 });
+
+module.exports = router;
