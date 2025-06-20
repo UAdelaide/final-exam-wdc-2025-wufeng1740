@@ -22,7 +22,8 @@ async function runSQLFile(filename) {
 
   // Split on semicolon + newline to separate commands (you may need to tweak this)
   const statements = sql
-    .split(/;\s*[\r\n]+/)   
+    .split(/;\s*[\r\n]+/)
+        // Split by semicolon followed by optional whitespace and newline
     .map((stmt) => stmt.trim())
     .filter((stmt) => stmt.length > 0);
 
@@ -36,6 +37,8 @@ async function runSQLFile(filename) {
     console.error('❌ Error executing SQL file:', err.message);
   }
 }
+
+run
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
