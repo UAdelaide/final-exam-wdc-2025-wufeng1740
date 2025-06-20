@@ -91,7 +91,7 @@
               throw new Error(result.error || 'Logout failed');
             }
             // Clear all cookies on logout
-            document.cookie.split(";").forEach(function(c) 「
+            document.cookie.split(";").forEach(function(c) {
               document.cookie = c.replace(/^ +/, "")
                 .replace(/=.*/, "=;expires=" + new Date(0).toUTCString() + ";path=/");
             });
