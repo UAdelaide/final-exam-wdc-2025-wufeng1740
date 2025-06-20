@@ -29,7 +29,7 @@
               throw new Error(result.error || 'Network response was not ok');
             }
             // deal with the result
-            this.ads = result.data;
+            this.dogImg = result.message;
             console.log(this.ads);
             this.showNotification('Data fetched successfully!', 'success');
           } catch (error) {
