@@ -61,7 +61,10 @@
             if (!response.ok) {
               throw new Error(result.error || 'Login failed');
             }
-            
+            this.user = result.user;
+            console.log('Login successful:', this.user);
+            // Redirect based on user type
+            if (this.user.type === 'owner') {
           } catch (error) {
             console.error('Login error:', error);
             return;
