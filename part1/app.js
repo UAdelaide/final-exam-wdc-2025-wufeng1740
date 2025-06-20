@@ -29,7 +29,7 @@ async function runSQLFile(filename) {
 
   try {
     for (const statement of statements) {
-    //   console.log(`Running SQL: ${statement}`);
+      console.log(`Running SQL: ${statement}`);
       await db.query(statement);
     }
     console.log(`✅ SQL file ${filename} executed successfully.`);
