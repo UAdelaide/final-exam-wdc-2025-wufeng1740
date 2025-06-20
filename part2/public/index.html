@@ -18,7 +18,7 @@
 
     <form action="">
       <label for="username"></label>
-      <input type="text" id="username" placeholder="username">
+      <input type="text" id="username" v-model=username placeholder="username">
       <label for="password"></label>
       <input type="password" id="password" placeholder="password">
       <button type="submit" class="btn btn-primary mt-3">Login</button>
@@ -38,7 +38,7 @@
       methods: {
         signIn() {
           const username = this.username;
-          const password = document.getElementById('password').value;
+          const password = this.password;
 
           if (!username || !password) {
             alert('Please enter both username and password');
