@@ -12,7 +12,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- Insert Test Data -------------------------------------------------------
 INSERT INTO Users (username, email, password_hash, role) VALUES
 ('ownerJane',    'jane@example.com',   'hashedpassword123', 'owner'),
-('bobwalker',   'bob@example.com',     'hashed456', 'walker'),
+('walk',   'bob@example.com',     'hashed456', 'walker'),
 ('carol123',    'carol@example.com',   'hashed789', 'owner'),
 ('davidwalker', 'david@example.com',   'hashed101', 'walker'),
 ('emma123',     'emma@example.com',    'hashed202', 'owner');
