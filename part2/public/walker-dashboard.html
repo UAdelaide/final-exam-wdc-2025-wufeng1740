@@ -79,7 +79,10 @@
         async function logout() {
           consle.log('Logging out...');
           try {
-            const response
+            const response = await fetch('/api/users/logout', {
+              method: 'POST',
+              headers: {
+
         }
 
         onMounted(() => {
