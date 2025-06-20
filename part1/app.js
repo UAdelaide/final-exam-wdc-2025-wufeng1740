@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 
 async function runSQLFile(filename) {
   const filePath = path.join(__dirname, filename);
   const sql = fs.readFileSync(filePath, 'utf-8');
@@ -46,6 +47,12 @@ async function initDatabase() {
 
 initDatabase();
 
+
+// Error handling middleware
+app.use(function(err, req, res, next) {
+  console.error('❌ Error:', err.stack || err.message || err);
+  res.status(500).json({ success: false, error: err.message || 'Internal Server Error' });
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
