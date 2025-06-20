@@ -65,6 +65,12 @@
             console.log('Login successful:', this.user);
             // Redirect based on user type
             if (this.user.type === 'owner') {
+              window.location.href = 'owner-dashboard.html';
+            } else if (this.user.type === 'walker') {
+              window.location.href = 'walker-dashboard.html';
+            } else {
+              alert('Unknown user type. Please contact support.');
+            }
           } catch (error) {
             console.error('Login error:', error);
             return;
