@@ -57,7 +57,19 @@
             this.showNotification('Failed to fetch data.', 'error');
           }
         },
-        
+        async fetchRandomDogImg() {
+          try {
+            const response = await fetch('https://dog.ceo/api/breeds/image/random');
+            const result = await response.json();
+            if (!response.ok) {
+              throw new Error(result.error || 'Network response was not ok');
+            }
+            return result.message; // return image URL
+          } catch (error) {
+            console.error('Error fetching dog image:', error);
+            return ''; // fallback empty image
+          }
+        }
         async getWalkrequests() {
           try {
             console.log('Fetching dog to walk...');
