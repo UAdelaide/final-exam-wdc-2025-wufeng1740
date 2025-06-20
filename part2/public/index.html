@@ -84,6 +84,7 @@
           }
         },
         async fetchAllDogs() {
+          console.log('Fetching all registered dogs...');
           try {
             const response = await fetch('/api/dogs');
             if (!response.ok) {
