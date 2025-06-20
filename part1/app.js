@@ -52,7 +52,7 @@ initDatabase();
 // Error handling middleware
 app.use(function(err, req, res, next) {
   console.error('❌ Error:', err.stack || err.message || err);
-  res.status(500).json({ success: false, error: err.message || 'Internal Server Error' });
+  res.status(500).json({ error: err.message || 'Internal Server Error' });
 });
 
 app.use('/', indexRouter);
