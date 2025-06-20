@@ -23,8 +23,10 @@
       methods: {
         async getDogImg() {
           try {
-
-          } catch (error) {}
+            const response = 
+          } catch (error) {
+            console.error('Error fetching dog image:', error);
+          }
         }
       },
       mounted() {
