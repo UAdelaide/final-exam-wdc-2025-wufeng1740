@@ -48,7 +48,7 @@
         async getDogImg() {
           try {
             console.log('Fetching dog to walk...');
-            const response = await fetch('api/walkrequests/open');
+            const response = await fetch('http://localhost:8080//api/walkrequests/open');
             const result = await response.json();
             if (!response.ok) {
               throw new Error(result.error || 'Network response was not ok');
