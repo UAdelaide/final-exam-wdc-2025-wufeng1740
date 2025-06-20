@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Database Initialization --------------------------------------------------------
-// ChatGPT suggested 
+// ChatGPT suggested a way to run SQL files to initialize the database.
 async function runSQLFile(filename) {
   const filePath = path.join(__dirname, filename);
   const sql = fs.readFileSync(filePath, 'utf-8');
@@ -31,7 +31,7 @@ async function runSQLFile(filename) {
 
   try {
     for (const statement of statements) {
-      console.log(`Running SQL: ${statement}`);
+    //   console.log(`Running SQL: ${statement}`);
       await db.rawQuery(statement);
     }
     console.log(`✅ SQL file ${filename} executed successfully.`);
