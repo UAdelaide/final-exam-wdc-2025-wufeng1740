@@ -46,7 +46,7 @@ async function initDatabase() {
 }
 
 initDatabase();
-// --------------------------------------------------------
+// --------------------------------------------------------------------------
 
 // Error handling middleware
 app.use(function(err, req, res, next) {
