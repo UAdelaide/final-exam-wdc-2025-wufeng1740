@@ -62,24 +62,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// POST signup (with basic validation)
-router.post('/signup', async (req, res) => {
-  const { username, email, password, role } = req.body;
 
-  if (!username || !email || !password || !role) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
-
-  try {
-    const [result] = await db.query(`
-      INSERT INTO Users (username, email, password_hash, role)
-      VALUES (?, ?, ?, ?)
-    `, [username, email, password, role]);
-
-    res.status(201).json({ message: 'Signup successful', user_id: result.insertId });
-  } catch (error) {
-    res.status(500).json({ error: 'Signup failed' });
-  }
-});
 
 module.exports = router;
