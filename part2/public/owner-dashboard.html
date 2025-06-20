@@ -153,7 +153,13 @@
         // get all dogs for the owner
         async function loadDogs() {
           try {
-            
+            const response = await fetch('/api/users/dogs', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                credentials: 'include'
+              }
+            });
           } catch (err) {
             error.value = 'Failed to load dogs';
           }
