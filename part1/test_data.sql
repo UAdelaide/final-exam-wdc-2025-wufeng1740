@@ -1,7 +1,9 @@
 -- Clean Data ------------------------------------------------------------
 SET FOREIGN_KEY_CHECKS = 0;
 /* clean data and reset id number*/
-TRUNCATE TABLE list_movie;
+TRUNCATE TABLE WalkRequests;
+TRUNCATE TABLE Dogs;
+TRUNCATE TABLE Users;
 
 INSERT INTO Users (username, email, password_hash, role) VALUES
 ('alice123',    'alice@example.com',   'hashed123', 'owner'),
