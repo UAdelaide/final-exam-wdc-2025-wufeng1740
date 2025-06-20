@@ -20,7 +20,7 @@ router.get('/api/dogs', async function(req, res, next) {
       FROM Dogs d
       JOIN Users u ON d.owner_id = u.user_id
     `);
-    res.json(row);
+    res.status(200).json(row);
   } catch (err) {
       next(err);
   }
@@ -44,7 +44,7 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
       JOIN Users u ON d.owner_id = u.user_id
       WHERE wr.status = 'open'
     `);
-    res.json(row);
+    res.status(200).json(row);
   } catch (err) {
       next(err);
   }
