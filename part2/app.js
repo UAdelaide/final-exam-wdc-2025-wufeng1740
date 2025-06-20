@@ -19,7 +19,7 @@ const userRoutes = require('./routes/userRoutes');
 app.use(cookieParser());
 // Session middleware
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'keyboard cat',
+  secret: 'my secret',
   resave: false,
   saveUninitialized: true,
   cookie: {
