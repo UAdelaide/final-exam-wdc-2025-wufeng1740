@@ -56,6 +56,8 @@
               },
               body: JSON.stringify({ username: username, password: password })
             });
+            const result = await response.json();
+            
           } catch (error) {
             console.error('Login error:', error);
             return;
