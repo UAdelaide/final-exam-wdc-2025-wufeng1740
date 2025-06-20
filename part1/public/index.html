@@ -19,6 +19,14 @@
         return {
           message: 'Hello, Vue!'
         }
+      },
+      methods: {
+        greet() {
+          alert(this.message);
+        }
+      },
+      mounted() {
+        this.greet();
       }
     });
     app.mount('#app');
