@@ -90,6 +90,7 @@
             if (!response.ok) {
               throw new Error('Failed to fetch dogs');
             }
+            
             this.alldogs = await response.json();
             console.log('All registered dogs:', this.alldogs);
           } catch (error) {
