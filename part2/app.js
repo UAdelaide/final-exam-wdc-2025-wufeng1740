@@ -14,6 +14,20 @@ app.use(express.static(path.join(__dirname, '/public')));
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+// Setup for 
+// Cookie parser middleware
+app.use(cookieParser());
+// Session middleware
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'keyboard cat', // 建议把 secret 写入 .env
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 // 1 hour
+  }
+}));
+
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
