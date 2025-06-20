@@ -6,3 +6,8 @@ INSERT INTO users (username, email, password_hash, role) VALUES
 ('emma123',     'emma@example.com',    'hashed202', 'owner');
 
 INSERT INTO dogs (name, size, owner_id) VALUES
+('Max', 'medium', (SELECT id FROM users WHERE username = 'alice123')),
+('Bella', 'small', (SELECT id FROM users WHERE username = 'carol123')),
+('Rocky', 'large', (SELECT id FROM users WHERE username = 'emma123')),
+('Charlie', 'medium', (SELECT id FROM users WHERE username = 'alice123')),
+('Luna', 'small', (SELECT id FROM users WHERE username = 'carol123'));
