@@ -79,7 +79,7 @@
               throw new Error(result.error || 'Network response was not ok');
             }
             // deal with the result
-            const requestsWithImages = await Promise.all(result.map(async (request) => {
+            const reqult = await Promise.all(result.map(async (request) => {
               const img = await this.fetchRandomDogImg();
               return { ...request, dogImg: img };
             }));
