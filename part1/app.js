@@ -23,8 +23,8 @@ async function runSQLFile(filename) {
   // Split on semicolon + newline to separate commands (you may need to tweak this)
   const statements = sql
     .split(/;\s*[\r\n]+/)
-    .map(stmt => stmt.trim())
-    .filter(stmt => stmt.length > 0);
+    .map((stmt) => stmt.trim())
+    .filter((stmt) => stmt.length > 0);
 
   try {
     for (const statement of statements) {
