@@ -25,11 +25,11 @@ INSERT INTO Dogs (name, size, owner_id) VALUES
 ('Milo', 'small', (SELECT user_id FROM Users WHERE username = 'ownerBob'));
 
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
-((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
-((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+((SELECT dog_id FROM Dogs WHERE name = 'Buddy'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+((SELECT dog_id FROM Dogs WHERE name = 'Lucy'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
 ((SELECT dog_id FROM Dogs WHERE name = 'Rocky'), '2025-06-11 14:00:00', 60, 'Mountain Trail', 'open'),
-((SELECT dog_id FROM Dogs WHERE name = 'Charlie'), '2025-06-12 10:15:00', 40, 'Downtown Park', 'completed'),
-((SELECT dog_id FROM Dogs WHERE name = 'Luna'), '2025-06-13 16:30:00', 50, 'Riverside Walk', 'cancelled');
+((SELECT dog_id FROM Dogs WHERE name = 'Daisy'), '2025-06-12 10:15:00', 40, 'Downtown Park', 'completed'),
+((SELECT dog_id FROM Dogs WHERE name = 'Milo'), '2025-06-13 16:30:00', 50, 'Riverside Walk', 'cancelled');
 
 -- Insert Test Data for WalkRatings
 INSERT INTO WalkRatings (request_id, rating, comments, walker_id, owner_id) VALUES
