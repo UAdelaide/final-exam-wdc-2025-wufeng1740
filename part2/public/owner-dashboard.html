@@ -122,6 +122,7 @@
           }
         }
 
+        // logout function to clear cookies and redirect
         async function logout() {
           console.log('Logging out...');
           try {
@@ -148,6 +149,9 @@
           }
           window.location.href = 'index.html';
         }
+
+        // 
+
         onMounted(() => {
           loadWalks();
         });
