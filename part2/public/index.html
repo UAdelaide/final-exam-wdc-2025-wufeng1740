@@ -37,7 +37,7 @@
       },
       methods: {
         signIn() {
-          const username = document.getElementById('username').value;
+          const username = this.username;
           const password = document.getElementById('password').value;
 
           if (!username || !password) {
