@@ -160,6 +160,7 @@
                 credentials: 'include'
               }
             });
+            if (!response.ok) {
           } catch (err) {
             error.value = 'Failed to load dogs';
           }
