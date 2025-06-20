@@ -6,3 +6,4 @@ VALUES
 ('davidwalker', 'david@example.com',   'hashed101', 'walker'),
 ('emma123',     'emma@example.com',    'hashed202', 'owner');
 
+INSERT INTO dogs (
