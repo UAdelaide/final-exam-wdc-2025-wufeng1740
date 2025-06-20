@@ -14,7 +14,7 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 ('ownerJane',    'jane@example.com',   'hashedpassword123', 'owner'),
 ('walkerMike',   'mike@example.com',     'hashedpassword456', 'walker'),
 ('ownerBob',    'bob@example.com',   'hashedpassword789', 'owner'),
-('davidwalker', 'david@example.com',   'hashed101', 'walker'),
+('', 'david@example.com',   'hashed101', 'walker'),
 ('emma123',     'emma@example.com',    'hashed202', 'owner');
 
 INSERT INTO Dogs (name, size, owner_id) VALUES
@@ -34,5 +34,5 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 -- Insert Test Data for WalkRatings
 INSERT INTO WalkRatings (request_id, rating, comments, walker_id, owner_id) VALUES
 ((SELECT request_id FROM WalkRequests WHERE status = 'completed' LIMIT 1), 5, 'Great service, very professional!',
- (SELECT user_id FROM Users WHERE username = 'davidwalker'),
+ (SELECT user_id FROM Users WHERE username = ''),
  (SELECT user_id FROM Users WHERE username = 'ownerJane'));
