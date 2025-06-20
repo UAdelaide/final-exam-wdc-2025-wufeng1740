@@ -132,6 +132,7 @@
             if (!response.ok) {
               throw new Error(result.error || 'Logout failed');
             }
+            
           } catch (err) {
             console.error('Logout error:', err);
             alert('Logout failed: ' + err.message);
