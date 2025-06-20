@@ -4,7 +4,7 @@
 DB_USER="admin"
 DB_PASS="admin123"
 DB_NAME="marketplace"
-SQL_FILE="database/db_init.sql"
+# SQL_FILE="database/db_init.sql"
 USER_SQL_FILE="database/create_user.sql"
 
 # set user and password file
