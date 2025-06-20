@@ -11,6 +11,39 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
+// Database Initialization --------------------------------------------------------
+// ChatGPT suggested a way to run SQL files to initialize the database.
+async function runSQLFile(filename) {
+  const filePath = path.join(__dirname, filename);
+  const sql = fs.readFileSync(filePath, 'utf-8');
+
+  // Split on semicolon + newline to separate commands (you may need to tweak this)
+  const statements = sql
+    .split(/;\s*[\r\n]+/)
+        // Split by semicolon followed by optional whitespace and newline
+    .map((stmt) => stmt.trim())
+    .filter((stmt) => stmt.length > 0);
+
+  try {
+    for (const statement of statements) {
+    //   console.log(`Running SQL: ${statement}`);
+      await db.rawQuery(statement);
+    }
+    console.log(`✅ SQL file ${filename} executed successfully.`);
+  } catch (err) {
+    console.error(`❌ Error executing SQL file ${filename}:`, err.message);
+  }
+}
+
+// database initialization
+async function initDatabase() {
+  await runSQLFile('dogwalks.sql');
+  await runSQLFile('test_data.sql');
+}
+
+initDatabase();
+// --------------------------------------------------------------------------
+
 // Setup for session and cookie ------------------------------------------
 // Cookie parser middleware
 app.use(cookieParser());
