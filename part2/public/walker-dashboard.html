@@ -63,7 +63,7 @@
             const res = await fetch(`/api/users/me`);
             const result = await res.json();
 
-            if (!res.ok) throw new Error(result.error || 'Application failed');
+            if (!res.ok) throw new Error(result.error || ' failed');
             message.value = result.message;
             error.value = '';
             await loadWalkRequests();
