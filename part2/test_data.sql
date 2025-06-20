@@ -1,16 +1,3 @@
--- User Setup ------------------------------------------------------------
--- DROP USER IF EXISTS 'admin'@'localhost';
--- DROP USER IF EXISTS 'admin'@'127.0.0.1';
--- DROP USER IF EXISTS 'admin'@'%';
--- FLUSH PRIVILEGES;
--- CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin123';
--- CREATE USER 'admin'@'127.0.0.1' IDENTIFIED WITH mysql_native_password BY 'admin123';
--- CREATE USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'admin123';
--- GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
--- GRANT ALL PRIVILEGES ON *.* TO 'admin'@'127.0.0.1' WITH GRANT OPTION;
--- GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
--- FLUSH PRIVILEGES;
-
 -- Use Database -------------------------------------------------------
 USE DogWalkService;
 
