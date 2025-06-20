@@ -7,8 +7,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// Return a list of all dogs with their size and owner's username.
 router.get('/api/dogs', async function(req, res, next) {
-
+  try 
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next) {
