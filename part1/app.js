@@ -22,7 +22,7 @@ async function runSQLFile(filename) {
 
   // Split on semicolon + newline to separate commands (you may need to tweak this)
   const statements = sql
-    .split(/;\s*[\r\n]+/)
+    .split(/;\s*[\r\n]+/)   
     .map((stmt) => stmt.trim())
     .filter((stmt) => stmt.length > 0);
 
@@ -34,8 +34,6 @@ async function runSQLFile(filename) {
     console.log('✅ SQL file executed successfully.');
   } catch (err) {
     console.error('❌ Error executing SQL file:', err.message);
-  } finally {
-    await db.pool.end(); // close the connection pool
   }
 }
 
