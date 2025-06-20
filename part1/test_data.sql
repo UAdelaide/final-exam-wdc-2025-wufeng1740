@@ -1,4 +1,18 @@
--- User 
+-- User Setup ------------------------------------------------------------
+DROP USER IF EXISTS 'admin'@'localhost';
+DROP USER IF EXISTS 'admin'@'127.0.0.1';
+DROP USER IF EXISTS 'admin'@'%';
+FLUSH PRIVILEGES;
+
+CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin123';
+CREATE USER 'admin'@'127.0.0.1' IDENTIFIED WITH mysql_native_password BY 'admin123';
+CREATE USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'admin123';
+
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'127.0.0.1' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
 
 -- Clean Data ------------------------------------------------------------
 SET FOREIGN_KEY_CHECKS = 0;
@@ -8,6 +22,7 @@ TRUNCATE TABLE Dogs;
 TRUNCATE TABLE Users;
 SET FOREIGN_KEY_CHECKS = 1;
 
+-- Insert Test Data -------------------------------------------------------
 INSERT INTO Users (username, email, password_hash, role) VALUES
 ('alice123',    'alice@example.com',   'hashed123', 'owner'),
 ('bobwalker',   'bob@example.com',     'hashed456', 'walker'),
