@@ -19,6 +19,9 @@ TRUNCATE TABLE Dogs;
 TRUNCATE TABLE Users;
 SET FOREIGN_KEY_CHECKS = 1;
 
+
+USE DogWalkService;
+
 -- Insert Test Data -------------------------------------------------------
 INSERT INTO Users (username, email, password_hash, role) VALUES
 ('alice123',    'alice@example.com',   'hashed123', 'owner'),
