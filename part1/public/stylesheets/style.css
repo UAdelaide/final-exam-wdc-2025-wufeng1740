@@ -81,7 +81,7 @@ tr:last-child td {
 }
 
 /* Forms */
-form {
+/* form {
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -115,7 +115,7 @@ label {
   margin-bottom: 0.3em;
   font-weight: 500;
   color: #23272f;
-}
+} */
 
 /* Buttons */
 button, .btn {
