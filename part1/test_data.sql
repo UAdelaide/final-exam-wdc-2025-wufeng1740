@@ -4,6 +4,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE WalkRequests;
 TRUNCATE TABLE Dogs;
 TRUNCATE TABLE Users;
+SET FOREIGN_KEY_CHECKS = 1;
 
 INSERT INTO Users (username, email, password_hash, role) VALUES
 ('alice123',    'alice@example.com',   'hashed123', 'owner'),
