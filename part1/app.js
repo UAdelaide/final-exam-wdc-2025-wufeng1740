@@ -17,6 +17,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Database Initialization --------------------------------------------------------
+// ChatGPT suggested 
 async function runSQLFile(filename) {
   const filePath = path.join(__dirname, filename);
   const sql = fs.readFileSync(filePath, 'utf-8');
