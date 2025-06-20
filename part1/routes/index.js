@@ -70,7 +70,7 @@ router.get('/api/walkers/summary', async function(req, res, next) {
       WHERE u.role = 'walker'
       GROUP BY r.walker_id
     `);
-    res.json(row);
+    res.status(200).json(row);
   } catch (err) {
       next(err);
   }
