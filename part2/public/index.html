@@ -49,10 +49,11 @@
             return;
           }
           try {
-
+            const response = wait fetch
           } catch (error) {
             console.error('Login error:', error);
-            
+            return;
+          }
           // Here you would typically make an API request to authenticate
           // For demonstration, we'll just log and redirect based on a simple check
           console.log(`Attempting to sign in: ${username}`);
