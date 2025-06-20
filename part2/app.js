@@ -4,6 +4,7 @@ require('dotenv').config();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 var fs = require('fs');
+const db = require("./db.js"); // Import the database module
 
 const app = express();
 
