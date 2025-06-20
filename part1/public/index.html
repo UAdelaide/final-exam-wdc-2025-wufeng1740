@@ -79,11 +79,11 @@
               throw new Error(result.error || 'Network response was not ok');
             }
             // deal with the result
-            const reqult = await Promise.all(result.map(async (request) => {
+            const requestsWithImages = await Promise.all(result.map(async (request) => {
               const img = await this.fetchRandomDogImg();
               return { ...request, dogImg: img };
             }));
-            this.walkrequests = result;
+            this.walkrequests = requestsWithImages;
             console.log(this.walkrequests);
             this.showNotification('Data fetched successfully!', 'success');
           } catch (error) {
