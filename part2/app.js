@@ -62,7 +62,8 @@ app.use(session({
 // Routes -------------------------------------------
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-const indexRoutes = require('./routes/userRoutes');
+const indexRoutes = require('./routes/indexRoutes');
+app.use('/', indexRoutes); // Serve the index page at the root URL
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
