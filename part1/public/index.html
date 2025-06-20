@@ -39,6 +39,7 @@
             this.showNotification('Data fetched successfully!', 'success');
           } catch (error) {
             console.error('Error fetching dog image:', error);
+            this.showNotification('Failed to fetch data.', 'error');
           }
         },
         showNotification(msg, type) {
