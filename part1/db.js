@@ -39,7 +39,7 @@ const rawPool = mysql.createPool({
   queueLimit: 0
 });
 
-async function query(poolUsed, sql, params) {
+async function rawQuery(poolUsed, sql, params) {
   let connection;
   try {
     connection = await poolUsed.getConnection();
@@ -60,5 +60,7 @@ async function query(poolUsed, sql, params) {
 
 module.exports = {
   query,
-  pool
+  pool,
+  rawQuery,
+  rawPool
 };
