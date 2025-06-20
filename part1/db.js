@@ -44,7 +44,7 @@ async function rawQuery(sql, params) {
   try {
     connection = await rawPool.getConnection();
     await connection.beginTransaction();
-    const [rows, fields] = await connection.execute(sql, params);
+    const [rows, fields] = await connection.query(sql, params);
     await connection.commit();
     return rows;
   } catch (err) {
