@@ -89,8 +89,12 @@
             if (!response.ok) {
               throw new Error('Logout failed');
             }
-            
-
+          } catch (err) {
+            console.error('Logout error:', err);
+            alert('Logout failed: ' + err.message);
+            return;
+          }
+          window.location.href = 'index.html';
         }
 
         onMounted(() => {
