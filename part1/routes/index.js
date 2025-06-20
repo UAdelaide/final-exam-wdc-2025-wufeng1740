@@ -8,6 +8,11 @@ router.get('/', function(req, res, next) {
 });
 
 // Return a list of all dogs with their size and owner's username.
+  // {
+  //   "dog_name": "Max",
+  //   "size": "medium",
+  //   "owner_username": "alice123"
+  // },
 router.get('/api/dogs', async function(req, res, next) {
   try {
     const row = await db.query(`
