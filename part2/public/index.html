@@ -32,7 +32,23 @@
   <div>
     <h3>All Registered Dogs</h3>
     <table>
-      
+      <thead>
+        <tr>
+          <th></th>
+          <th>Dog Name</th>
+          <th>Breed</th>
+          <th>Age</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dog in alldogs" :key="dog.id">
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.breed }}</td>
+          <td>{{ dog.age }} years</td>
+          <td><img :src="dog.dogImg" alt="Dog Image" class="img-thumbnail" style="width: 100px;"></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
