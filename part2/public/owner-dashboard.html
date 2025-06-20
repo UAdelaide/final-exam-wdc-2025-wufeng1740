@@ -157,9 +157,9 @@
           try {
             const response = await fetch('/api/users/dogs', {
               method: 'GET',
+              credentials: 'include',
               headers: {
-                'Content-Type': 'application/json',
-                credentials: 'include'
+                'Content-Type': 'application/json'
               }
             });
             const result = await response.json();
