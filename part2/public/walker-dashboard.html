@@ -88,7 +88,7 @@
             });
             const result = await response.json();
             if (!response.ok) {
-              throw new Error('Logout failed');
+              throw new Error(result.error || 'Logout failed');
             }
           } catch (err) {
             console.error('Logout error:', err);
