@@ -85,7 +85,12 @@ router.get('/dogs', async (req, res) => {
     const [rows] = await db.query(`
       SELECT d.dog_id, d.name
       FROM Dogs d
-      WHERE d.owner_id = ?
+      WHERE d.owner_id = ?`, [userId]);
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
+});
 
 
 module.exports = router;
