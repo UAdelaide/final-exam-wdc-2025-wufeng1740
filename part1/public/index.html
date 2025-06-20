@@ -14,10 +14,10 @@
     </div>
 
     <h1>Dog Walking Service</h1>
+    <img :src="getDogImg()" alt="">
     <!-- <p>This is a simple Vue.js application.</p> -->
     <div v-for="request in walkrequests">
         <h2>{{request.request_id}} - {{ request.dog_name }}</h2>
-        <img :src="getDogImg()" alt="">
         <p>Time:{{ request.requested_time}}</p>
         <p>Duration: {{ request.duration_minutes }} minutes</p>
         <p>Location: {{ request.location }}</p>
