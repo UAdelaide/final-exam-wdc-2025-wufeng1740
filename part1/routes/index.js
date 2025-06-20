@@ -7,7 +7,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('//api/dogs', function(req, res, next) {
-  res.render('about', { title: 'About Us' });
+
+});
+
+router.get('/api/walkrequests/open', function(req, res, next) {
+
+});
+
+router.get('//api/dogs', function(req, res, next) {
+
 });
 
 module.exports = router;
