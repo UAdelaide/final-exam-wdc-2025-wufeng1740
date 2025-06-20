@@ -49,7 +49,7 @@
             this.showNotification('Failed to fetch data.', 'error');
           }
         },
-        async getDogImg() {
+        async getWalkrequests() {
           try {
             console.log('Fetching dog to walk...');
             const response = await fetch('/api/walkrequests/open');
