@@ -44,7 +44,7 @@ async function initDatabase() {
   await runSQLFile('test_data.sql');
 }
 
-
+initDatabase();
 
 
 app.use('/', indexRouter);
