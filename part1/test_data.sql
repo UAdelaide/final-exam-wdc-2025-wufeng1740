@@ -19,7 +19,7 @@ TRUNCATE TABLE Dogs;
 TRUNCATE TABLE Users;
 SET FOREIGN_KEY_CHECKS = 1;
 
-
+-- Use Database -------------------------------------------------------
 USE DogWalkService;
 
 -- Insert Test Data -------------------------------------------------------
