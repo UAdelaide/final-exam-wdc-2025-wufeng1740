@@ -68,7 +68,7 @@
             message.value = result.message;
             error.value = '';
             user.value = result.user_id;
-            console.log('Current user ID:', user, result);
+            console.log('Current user ID:', user.value, result);
           } catch (err) {
             error.value = err.message;
             message.value = '';
