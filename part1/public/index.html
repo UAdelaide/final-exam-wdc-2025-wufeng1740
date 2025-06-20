@@ -16,7 +16,7 @@
     <h1>Dog Walking Service</h1>
     <!-- <p>This is a simple Vue.js application.</p> -->
     <div v-for="request in walkrequests">
-        <h2>Dog name: {{ request.dog_name }}</h2>
+        <p>Dog name: {{ request.dog_name }}</p>
         <img :src="request.dogImg" alt="">
         <p>Request ID: {{request.request_id}} </p>
         <p>Time:{{ request.requested_time}}</p>
