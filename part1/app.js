@@ -3,7 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fs = require('fs');
-const db = require(".db.js"); // Import the database module
+const db = require("./db.js"); // Import the database module
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
