@@ -34,7 +34,29 @@
         };
       },
       methods: {
-        
+        signIn(event) {
+          event.preventDefault();
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+
+          if (!username || !password) {
+            alert('Please enter both username and password');
+            return;
+          }
+
+          // Here you would typically make an API request to authenticate
+          // For demonstration, we'll just log and redirect based on a simple check
+          console.log(`Attempting to sign in: ${username}`);
+
+          // Simple example logic - in a real app, this would be an API call
+          if (username === 'owner' && password === 'password') {
+            window.location.href = 'owner-dashboard.html';
+          } else if (username === 'walker' && password === 'password') {
+            window.location.href = 'walker-dashboard.html';
+          } else {
+            alert('Invalid credentials. Please try again.');
+          }
+        }
       },
       mounted() {
         // Any initialization logic can go here
