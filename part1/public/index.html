@@ -30,7 +30,7 @@
       <input type="text" v-model="request.dog_name" placeholder="Dog Name">
       <input type="text" v-model="request.request_id" placeholder="Request ID">
     </form>
-    <button type="button" @click="">Apply</button>
+    <button type="button" @click="showNotification("thanks for your applying", success)">Apply</button>
   </div>
 
   <script>
