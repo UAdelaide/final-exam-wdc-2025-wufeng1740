@@ -15,12 +15,12 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 ('walkerMike',   'mike@example.com',     'hashedpassword456', 'walker'),
 ('ownerBob',    'bob@example.com',   'hashedpassword789', 'owner'),
 ('walkerDavid', 'david@example.com',   'hashed101', 'walker'),
-('owner',     'emma@example.com',    'hashed202', 'owner');
+('ownerEmma',     'emma@example.com',    'hashed202', 'owner');
 
 INSERT INTO Dogs (name, size, owner_id) VALUES
 ('Max', 'medium', (SELECT user_id FROM Users WHERE username = 'ownerJane')),
 ('Bella', 'small', (SELECT user_id FROM Users WHERE username = 'carol123')),
-('Rocky', 'large', (SELECT user_id FROM Users WHERE username = 'owner')),
+('Rocky', 'large', (SELECT user_id FROM Users WHERE username = 'ownerEmma')),
 ('Charlie', 'medium', (SELECT user_id FROM Users WHERE username = 'ownerJane')),
 ('Luna', 'small', (SELECT user_id FROM Users WHERE username = 'carol123'));
 
